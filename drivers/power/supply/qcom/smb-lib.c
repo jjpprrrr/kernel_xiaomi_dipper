@@ -2544,8 +2544,7 @@ static void smblib_reg_work(struct work_struct *work)
 
 		schedule_delayed_work(&chg->reg_work,
 			CHARGING_PERIOD_S * HZ);
-	}
-	else
+	} else
 		schedule_delayed_work(&chg->reg_work,
 			NOT_CHARGING_PERIOD_S * HZ);
 }
@@ -6255,7 +6254,6 @@ static void smblib_typec_reenable_work(struct work_struct *work)
 		if (rc < 0)
 			smblib_err(chg, "Couldn't enable type-c rc=%d\n", rc);
 
-		/* wait for type-c detection to complete */
 	}
 
 unlock:
